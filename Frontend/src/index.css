@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core surfaces */
+    --background: 220 20% 97%;
+    --foreground: 220 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 12%;
+
+    /* Primary - Blue */
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 221 83% 96%;
+
+    /* Secondary */
+    --secondary: 220 14% 94%;
+    --secondary-foreground: 220 25% 25%;
+
+    /* Muted */
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 10% 52%;
+
+    /* Accent */
+    --accent: 221 83% 96%;
+    --accent-foreground: 221 83% 40%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders */
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar specific */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 20% 30%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 221 83% 96%;
+    --sidebar-accent-foreground: 221 83% 40%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 221 83% 53%;
+
+    /* Admin tokens */
+    --admin-sidebar-width: 260px;
+    --admin-header-height: 56px;
+    --stat-green: 142 76% 36%;
+    --stat-green-bg: 142 76% 96%;
+    --stat-orange: 25 95% 53%;
+    --stat-orange-bg: 25 95% 96%;
+    --stat-purple: 262 83% 58%;
+    --stat-purple-bg: 262 83% 96%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .admin-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  .stat-card {
+    @apply bg-card rounded-xl border p-5 flex flex-col gap-3;
+  }
+
+  .page-header {
+    @apply text-2xl font-semibold text-foreground mb-1;
+  }
+
+  .page-sub {
+    @apply text-sm text-muted-foreground mb-6;
+  }
+
+  .section-card {
+    @apply bg-card rounded-xl border p-6;
+  }
+
+  /* ── Storefront ──────────────────────────────────────── */
+  .store-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .store-announcement {
+    @apply bg-primary text-primary-foreground text-center py-2.5 text-xs font-medium tracking-wide;
+  }
+
+  .store-nav {
+    @apply sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm;
+  }
+
+  .store-logo {
+    @apply flex items-center gap-0;
+  }
+
+  .store-cart-badge {
+    @apply absolute -top-1 -right-1 w-4 h-4 bg-primary text-primary-foreground text-[10px] font-bold rounded-full flex items-center justify-center;
+  }
+
+  .store-hero {
+    @apply bg-gradient-to-br from-background via-accent/30 to-background;
+  }
+
+  .store-badge-pill {
+    @apply px-3 py-1 rounded-full text-xs font-semibold border border-primary/30 text-primary bg-primary/10;
+  }
+
+  .store-btn-primary {
+    @apply px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all text-sm shadow-md hover:shadow-lg active:scale-95;
+  }
+
+  .store-btn-outline {
+    @apply px-6 py-3 border-2 border-border text-foreground font-semibold rounded-xl hover:bg-secondary transition-colors text-sm;
+  }
+
+  .store-hero-float {
+    @apply absolute flex items-center gap-2 bg-card shadow-lg rounded-xl px-3 py-2 border border-border;
+  }
+
+  .store-hero-float-1 {
+    @apply -top-4 -right-4;
+  }
+
+  .store-hero-float-2 {
+    @apply -bottom-4 -left-4;
+  }
+
+  .store-category-card {
+    @apply flex flex-col items-center p-4 bg-card rounded-2xl border border-border hover:border-primary/40 hover:shadow-md transition-all cursor-pointer;
+  }
+
+  .store-product-card {
+    @apply bg-card rounded-2xl border border-border p-4 hover:shadow-lg transition-all duration-200 hover:-translate-y-1;
+  }
+
+  .store-product-badge {
+    @apply absolute top-2.5 left-2.5 px-2 py-0.5 bg-primary text-primary-foreground text-[10px] font-bold rounded-full;
+  }
+
+  .store-add-btn {
+    @apply px-3 py-1.5 bg-primary text-primary-foreground text-xs font-semibold rounded-lg hover:bg-primary/90 transition-all active:scale-95 whitespace-nowrap;
+  }
+
+  .store-add-btn-added {
+    @apply bg-green-600 hover:bg-green-600;
+  }
+
+  .store-promo-banner {
+    @apply relative overflow-hidden bg-primary rounded-3xl p-10 md:p-14;
+  }
+
+  .store-testimonial-card {
+    @apply bg-card rounded-2xl border border-border p-6 hover:shadow-md transition-shadow;
+  }
+
+  .store-newsletter {
+    @apply text-center bg-secondary/50 rounded-3xl p-10 border border-border;
+  }
+}

@@ -1,0 +1,1 @@
+ALTER TABLE public.google_reviews_settings ADD COLUMN max_reviews_to_show integer NOT NULL DEFAULT 10;

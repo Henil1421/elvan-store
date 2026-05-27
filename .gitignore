@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+*.local
+
+# PM2 / deployment runtime logs (keep the directory, ignore the log files)
+logs/*.log
